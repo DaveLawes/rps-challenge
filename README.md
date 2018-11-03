@@ -43,39 +43,39 @@ And a representation of the objects I have created:
 ```
    Client
 ╔════════════╗  
-║            ║ Sends HTTP requests
-║  Browser   ║ (GET, POST, PATH, DELETE)      
-║            ║
+║             ║ Sends HTTP requests
+║  Browser    ║ (GET, POST, PATH, DELETE)      
+║             ║
 ╚════════════╝
       |
       |
       |
 Server (Sinatra Framework) is listening on a specific port
 ╔════════════╗
-║            ║ Rack maps HTTP requests/response into/from Ruby
-║    RACK    ║ Rack provides the DSL to write the web app
-║            ║
+║             ║ Rack maps HTTP requests/response into/from Ruby
+║    RACK     ║ Rack provides the DSL to write the web app
+║             ║
 ╚════════════╝
       |
       |
       |
    app.rb                       Model                 
 ╔════════════╗             ╔════════════╗  The game:      
-║            ║------------>║            ║   - Defines the rules (what move beats what)      
-║ Controller ║             ║    Game    ║   - Call methods on Player and Computer 
-║            ║<------------║   (class)  ║   - Provides state to controller for rendering in the view      
+║             ║------------>║             ║   - Defines the rules (what move beats what)      
+║ Controller  ║             ║    Game     ║   - Call methods on Player and Computer 
+║             ║<------------║   (class)   ║   - Provides state to controller for rendering in the view      
 ╚════════════╝             ╚════════════╝ 
       |                           |
-╔════════════╗                    |              ╔════════════╗
-║            ║                    |              ║            ║  Both Player and Computer:          
-║   Views    ║                    |------------->║   Player   ║   - Know their name
-║            ║                    |              ║  (class)   ║   - Know their move
-╚════════════╝                    |              ╚════════════╝   - Uses the rules to know if their move wins
+╔════════════╗                   |              ╔════════════╗
+║             ║                   |              ║             ║  Both Player and Computer:          
+║   Views     ║                   |------------->║   Player    ║   - Know their name
+║             ║                   |              ║  (class)    ║   - Know their move
+╚════════════╝                   |              ╚════════════╝   - Uses the rules to know if their move wins
  Embedded Ruby                    | 
                                   |              ╔════════════╗ 
-                                  |              ║            ║
-                                  |------------->║  Computer  ║ 
-                                                 ║  (class)   ║
+                                  |              ║             ║
+                                  |------------->║  Computer   ║ 
+                                                 ║  (class)    ║
                                                  ╚════════════╝            
                                             
 ```
